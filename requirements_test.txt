@@ -1,0 +1,4 @@
+coverage==3.7.1
+pytest
+tox
+watchdog

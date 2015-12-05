@@ -1,0 +1,6 @@
+include README.rst
+include setup.py
+include requirements_test.txt
+include tox.ini
+graft docs
+graft tests
