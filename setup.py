@@ -24,6 +24,7 @@ tests_require = open(os.path.join(os.path.dirname(__file__), 'requirements_test.
 setup(
     name = "python-annex",
     version = __version__,
+    author="Jimmy Tang",
     packages = find_packages(exclude=["__pycache__"]),
     cmdclass={
         'test': Tox,

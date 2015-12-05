@@ -20,6 +20,7 @@ class Key(object):
 		self.g_chunk_no = None
 		self.g_name = None
 		self.g_ext = None
+		self.i_keyname = None
 
 	def create(self, data=None, backend='sha256', chunk=False):
 		self.g_size = len(data)
@@ -32,7 +33,7 @@ class Key(object):
 		parts = []
 
 		for k in self.__order__:
-			if getattr(self, k) is not None:
+			if getattr(self, k) is not None and k.startswith('g_'):
 				parts.append("{0}{1}".format(self.__struct__[k], getattr(self, k)))
 
 		part1 = '-'.join(parts)
@@ -43,12 +44,14 @@ class Key(object):
 		names = ['g_name','g_ext']
 		parts = []
 		for k in names:
-			if getattr(self, k) is not None:
+			if getattr(self, k) is not None and k.startswith('g_'):
 				parts.append("{0}{1}".format(self.__struct__[k], getattr(self, k)))
 		part2 = '-'.join(parts)
 		keyparts.append(part2)
 
-		return '--'.join(keyparts)
+		self.i_keyname = '--'.join(keyparts)
+
+		return self.i_keyname
 
 	def keypath(self, key):
 		h = hashlib.new('md5')
