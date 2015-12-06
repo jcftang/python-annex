@@ -1,0 +1,2 @@
+00af8072-cbeb-11e1-b3e3-7fdfd2009cac location=ssh://user@foo.bar/~/annex/ name=foo.bar type=git timestamp=1402923153.838453s
+111f8072-cbeb-11e1-b3e3-7fdfd2009cac location=ssh://user@quux.bar/~/annex/ name=quux.bar type=git timestamp=1402923153.838453s
